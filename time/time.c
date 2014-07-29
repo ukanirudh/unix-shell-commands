@@ -1,0 +1,16 @@
+#include<time.h>
+#include<utime.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+void main(int argc,char *argv[])
+{
+	time_t t = time(NULL);
+        struct tm tm = *localtime(&t);
+	printf("The time is: %d:%d:%d\n", tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+}
+
+

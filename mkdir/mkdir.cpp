@@ -1,0 +1,23 @@
+#include<sys/stat.h>
+#include<unistd.h>
+#include<iostream>
+
+using namespace std;
+
+int main(int argc,char *argv[])
+{
+	if(argc>0)
+	{
+		
+		int rc=mkdir(argv[1],S_IRWXU|S_IRWXG|S_IROTH|S_IXOTH);
+		if(rc==0)
+			cout<<"Successful\n";
+		else
+			cout<<"Unsuccessfull\n";
+	}
+	else
+		cout<<"Usage error\n";
+	return 0;
+}
+
+
